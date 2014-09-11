@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <bean id="prefixerProcessor" class="com.packt.camel.chapter3.PrefixerProcessor"/>
+
+    <camelContext xmlns="http://camel.apache.org/schema/blueprint">
+        <route>
+            <from uri="timer:fire?period=5000"/>
+            <setBody>
+                <constant>Hello Chapter3</constant>
+            </setBody>
+            <process ref="prefixerProcessor"/>
+            <to uri="log:blueprintRoute"/>
+        </route>
+    </camelContext>
+
+</blueprint>
