@@ -10,4 +10,8 @@ public class MyBean {
         return "My Logic got " + body;
     }
 
+    public String setMyHeader() {
+        return "Here's my header definition, whatever the logic is";
+    }
+
 }

@@ -8,6 +8,9 @@
             <from uri="timer:fire?period=5000"/>
             <setBody><constant>Hello Chapter4</constant></setBody>
             <to uri="bean:myBean"/>
+            <setHeader headerName="myHeaderSetByTheBean">
+                <method bean="myBean" method="setMyHeader"/>
+            </setHeader>
             <to uri="log:blueprintRoute"/>
         </route>
     </camelContext>
