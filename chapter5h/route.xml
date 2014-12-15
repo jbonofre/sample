@@ -9,7 +9,7 @@
         <route>
             <from uri="timer:fire?period=1000"/>
             <setBody>
-               <constant>Hello chapter5g</constant>
+               <constant>Hello chapter5h</constant>
             </setBody>
             <to uri="jms:topic:input?connectionFactory=#amqConnectionFactory"/>
         </route>
