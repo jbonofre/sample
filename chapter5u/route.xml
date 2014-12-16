@@ -4,7 +4,7 @@
     <camelContext xmlns="http://camel.apache.org/schema/blueprint">
         <route>
             <from uri="timer:first?period=500"/>
-	    <setBody><constant>Hello chapter5v</constant></setBody>
+	    <setBody><constant>Hello chapter5u</constant></setBody>
             <to uri="log:regular"/>
             <sample messageFrequency="5">
                 <to uri="direct:frequency"/>
