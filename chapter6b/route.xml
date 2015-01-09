@@ -2,12 +2,12 @@
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
 	<camelContext xmlns="http://camel.apache.org/schema/blueprint">
-		<route>
+		<route id="server">
 			<from uri="packt:server"/>
 			<to uri="log:server"/>
 			<setBody><simple>Echo ${body}</simple></setBody>
 		</route>
-		<route>
+		<route id="client">
 			<from uri="timer:fire?period=5000"/>
 			<setBody><constant>chapter6b</constant></setBody>
 			<to uri="packt:client"/>
