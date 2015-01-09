@@ -19,6 +19,11 @@
             <artifactId>camel-core</artifactId>
             <version>${camel.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -30,6 +35,10 @@
                 <version>2.3.7</version>
                 <configuration>
                     <instructions>
+                        <Import-Package>
+                            org.slf4j;resolution:=optional,
+                            *
+                        </Import-Package>
                         <Export-Package>
                             com.packt.camel.component*
                         </Export-Package>
