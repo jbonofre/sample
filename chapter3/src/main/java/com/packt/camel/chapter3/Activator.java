@@ -12,6 +12,10 @@ public class Activator implements BundleActivator {
     private ServiceRegistration serviceRegistration;
 
     public void start(BundleContext bundleContext) throws Exception {
+	// this is just for the example, the following code is not fully correct
+	// we should use OsgiDefaultCamelContext like for instance:
+	//   camelContext = new OsgiDefaultCamelContext(bundleContext, new SimpleRegistry());
+        // the OsgiDefaultCamelContext takes care of OSGi service registration, etc
         camelContext = new DefaultCamelContext();
         camelContext.addRoutes(new MyRouteBuilder());
         serviceRegistration = bundleContext.registerService(CamelContext.class, camelContext, null);
