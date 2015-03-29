@@ -33,7 +33,7 @@ public class RouteTest extends CamelBlueprintTestSupport {
     }
 
     @Test
-    public void testRoutingFrance() throws Exception {
+    public void testService() throws Exception {
         String message = "BEGIN";
 
         MockEndpoint franceEndpoint = getMockEndpoint("mock:direct:output");
