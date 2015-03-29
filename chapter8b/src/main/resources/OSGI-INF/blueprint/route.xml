@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+   
+    <reference id="service" interface="org.apache.camel.Processor"/>
+
+    <camelContext xmlns="http://camel.apache.org/schema/blueprint">
+        <route id="test">
+            <from uri="direct:input"/>
+            <process ref="service"/>
+            <to uri="direct:output"/>
+        </route>
+    </camelContext>
+
+</blueprint>
